@@ -9,6 +9,12 @@ export default defineConfig({
   // An absolute base guarantees assets resolve regardless of trailing slashes
   // or nested routes, which a relative base ('./') cannot.
   base: '/vulnerable-login-page-analyzer/',
+  // Build into docs/ so the repo can deploy from main branch /docs folder
+  // via GitHub Pages "Deploy from a branch" — no Actions workflow required.
+  build: {
+    outDir: 'docs',
+    emptyOutDir: true,
+  },
   plugins: [react()],
   resolve: {
     alias: {

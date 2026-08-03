@@ -1,9 +1,9 @@
 name: Deploy built site to gh-pages branch
 
 # Fallback deployment for repos whose Pages source is set to
-# "Deploy from a branch" instead of "GitHub Actions".
-# This workflow builds the project and commits the dist/ output to the
-# gh-pages branch, which you can then select as the Pages source.
+# "Deploy from a branch" but who want the build output deployed
+# to a dedicated gh-pages branch instead of using /docs on main.
+# This workflow builds the project and commits the output to gh-pages.
 
 on:
   push:
@@ -37,11 +37,11 @@ jobs:
         run: npm run build
 
       - name: Add .nojekyll
-        run: touch dist/.nojekyll
+        run: touch docs/.nojekyll
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./docs
           force_orphan: true

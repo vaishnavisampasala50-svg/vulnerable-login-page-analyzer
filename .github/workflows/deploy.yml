@@ -30,11 +30,11 @@ jobs:
       - name: Build
         run: npm run build
       - name: Add .nojekyll
-        run: touch dist/.nojekyll
+        run: touch docs/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: docs
 
   deploy:
     needs: build

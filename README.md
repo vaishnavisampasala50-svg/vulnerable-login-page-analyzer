@@ -31,20 +31,37 @@ Built with **React + TypeScript + Tailwind CSS**, bundled by **Vite**.
 ```bash
 npm install
 npm run dev      # local dev server
-npm run build    # production build into dist/
+npm run build    # production build into docs/
 npm run typecheck
 ```
 
 ## Deploy to GitHub Pages
 
-The project is preconfigured for GitHub Pages project sites.
+The project is preconfigured for GitHub Pages project sites. The Vite `base` is set to
+`/vulnerable-login-page-analyzer/` (absolute) so built assets resolve correctly with or
+without a trailing slash on the URL.
+
+There are three ways to deploy — pick whichever matches your repo settings:
+
+### Option A — Deploy from `main` branch `/docs` folder (no Actions needed)
+
+1. Run `npm run build` locally (outputs to `docs/`).
+2. Commit the `docs/` folder to `main`.
+3. In **Settings → Pages → Build and deployment → Source: Deploy from a branch**,
+   select **`main`** and **`/docs`** folder.
+
+### Option B — GitHub Actions artifact deploy (recommended for auto-deploy)
 
 1. Push to the `main` branch.
 2. The included workflow (`.github/workflows/deploy.yml`) builds and deploys automatically.
-3. In your repo settings: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+3. In **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
-The Vite `base` is set to `./` so assets resolve correctly from
-`https://<user>.github.io/<repo>/`.
+### Option C — `gh-pages` branch deploy
+
+1. Push to `main`. The workflow (`.github/workflows/deploy-gh-pages.yml`) builds and
+   pushes the output to a `gh-pages` branch.
+2. In **Settings → Pages → Build and deployment → Source: Deploy from a branch**,
+   select **`gh-pages`** and **`/ (root)`** folder.
 
 ## Self-test
 

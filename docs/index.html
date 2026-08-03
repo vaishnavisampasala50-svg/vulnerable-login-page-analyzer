@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vulnerable-login-page-analyzer/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#05080f" />
+    <meta
+      name="description"
+      content="Sentinel — an educational Vulnerable Login Page Analyzer that detects SQL injection, XSS, weak passwords, and missing fields, then explains the risks and how to prevent them."
+    />
+    <title>Sentinel · Vulnerable Login Page Analyzer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Critical inline styles: guarantee a dark page even if the CSS bundle fails to load,
+         so the site never appears as a blank white screen on GitHub Pages. */
+      html, body, #root { min-height: 100%; margin: 0; }
+      html { color-scheme: dark; background-color: #05080f; }
+      body { background-color: #05080f; color: #e2e8f0; font-family: 'Inter', system-ui, 'Segoe UI', sans-serif; }
+      #app-fallback {
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        min-height: 100vh; padding: 2rem; text-align: center; gap: 0.5rem;
+      }
+      #app-fallback h1 { font-size: 1.5rem; font-weight: 700; color: #f8fafc; margin: 0; }
+      #app-fallback p { color: #94a3b8; max-width: 28rem; margin: 0; font-size: 0.875rem; line-height: 1.5; }
+      #app-fallback code { color: #22d3ee; font-family: ui-monospace, monospace; font-size: 0.8rem; }
+    </style>
+    <script>
+      // If the main bundle fails to load (e.g. a cached 404 after a redeploy), show a clear
+      // message and a one-tap reload instead of an unexplained white page.
+      window.addEventListener('error', function (e) {
+        var t = e.target;
+        if (t && (t.tagName === 'SCRIPT' || t.tagName === 'LINK')) {
+          var fb = document.getElementById('app-fallback');
+          if (fb) fb.style.display = 'flex';
+        }
+      }, true);
+    </script>
+    <script type="module" crossorigin src="/vulnerable-login-page-analyzer/assets/index-kpEM5Ojs.js"></script>
+    <link rel="stylesheet" crossorigin href="/vulnerable-login-page-analyzer/assets/index-BRIvzC8-.css">
+  </head>
+  <body>
+    <div id="root">
+      <div id="app-fallback" style="display:none">
+        <h1>Sentinel is loading</h1>
+        <p>The analyzer did not start correctly. This is usually a stale cache after a deploy.</p>
+        <p>Please <a href="./" onclick="location.reload(true);return false" style="color:#22d3ee">reload the page</a>.</p>
+        <p>If the problem persists, open <code>./index.html</code> directly.</p>
+      </div>
+    </div>
+  </body>
+</html>
