@@ -4,9 +4,11 @@ import { fileURLToPath, URL } from 'node:url';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Relative base so the build works on GitHub Pages project sites
-  // (https://<user>.github.io/<repo>/) without rewriting paths.
-  base: './',
+  // Absolute base path matching the GitHub Pages project-site URL:
+  // https://vaishnavisampasala50-svg.github.io/vulnerable-login-page-analyzer/
+  // An absolute base guarantees assets resolve regardless of trailing slashes
+  // or nested routes, which a relative base ('./') cannot.
+  base: '/vulnerable-login-page-analyzer/',
   plugins: [react()],
   resolve: {
     alias: {
